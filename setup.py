@@ -18,9 +18,10 @@ import setuptools
 
 
 _deps = [
-    "transformers",
+    "transformers @ git+https://github.com/huggingface/transformers@v4.49.0-Gemma-3",
     "torch",
     "sentencepiece",
+    "flash-attn",
     "descript-audio-codec",
     "descript-audiotools @ git+https://github.com/descriptinc/audiotools", # temporary fix as long as 0.7.4 is not published
     "protobuf>=4.0.0"
