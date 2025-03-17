@@ -1822,7 +1822,7 @@ class ParlerTTSModel(ParlerTTSPreTrainedModel):
     "The Parler-TTS decoder model with a language modelling head on top.",
     MUSICGEN_START_DOCSTRING,
 )
-class ParlerTTSForCausalLM(ParlerTTSPreTrainedModel):
+class ParlerTTSForCausalLM(ParlerTTSPreTrainedModel, GenerationMixin):
     def __init__(self, config: ParlerTTSDecoderConfig):
         super().__init__(config)
 
