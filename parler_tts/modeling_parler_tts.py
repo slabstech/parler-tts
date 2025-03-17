@@ -25,6 +25,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import CrossEntropyLoss
 from transformers import AutoConfig, AutoModel, AutoModelForTextEncoding
+from transformers import PreTrainedModel, GenerationMixin
 from transformers.activations import ACT2FN
 from transformers.cache_utils import (
     Cache,
@@ -2303,7 +2304,8 @@ class ParlerTTSForCausalLM(ParlerTTSPreTrainedModel):
     "for music generation tasks with one or both of text and audio prompts.",
     MUSICGEN_START_DOCSTRING,
 )
-class ParlerTTSForConditionalGeneration(PreTrainedModel):
+class ParlerTTSForConditionalGeneration(PreTrainedModel, GenerationMixin):
+#class ParlerTTSForConditionalGeneration(PreTrainedModel):
     config_class = ParlerTTSConfig
     base_model_prefix = "encoder_decoder"
     main_input_name = "input_ids"
